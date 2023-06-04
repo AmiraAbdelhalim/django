@@ -149,9 +149,8 @@ def one_student(request, id):
             student_serializer = StudentSerializer(instance=student)
             data = student_serializer.data
             http_status = status.HTTP_200_OK
-        # fixme: check why it is not updating one field only!
         if request.method == 'PUT':
-            student_serializer = StudentSerializer(instance=student, data=request.data)
+            student_serializer = StudentSerializer(instance=student, data=request.data, partial=True)
             if student_serializer.is_valid():
                 student_serializer.save()
                 data = student_serializer.data

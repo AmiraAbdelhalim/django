@@ -1,0 +1,15 @@
+{% extends 'e_learning/base.html'%}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h1>Student Info</h1>
+            <ul>
+                <li>Name: {{student.student_name}}</li>
+                <li>Age: {{student.student_age}}</li>
+                <li>Reg Date: {{student.Student_reg_date}}</li>
+                <li>Track: {{student.track.track_name}}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
